@@ -1,0 +1,13 @@
+<h1>Editar Tarefa</h1>
+<form action="/edit/{{task.id}}" method="POST">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" value="{{task.nome}}" required>
+  <label for="descricao">Descrição:</label>
+  <input type="text" id="descricao" name="descricao" value="{{task.descricao}}" required>
+  
+  <label for="status">Status:</label>
+  <input type="checkbox" id="status" name="status" {{#if task.status}}checked{{/if}}>
+  
+  <button type="submit">Salvar</button>
+</form>
+<a href="/">Voltar</a>

@@ -1,0 +1,25 @@
+<h1>Lista de Tarefas</h1>
+<a href="/create">Adicionar Tarefa</a>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tasks}}
+    <tr>
+      <td>{{this.nome}}</td>
+      <td>{{this.descricao}}</td>
+      <td>{{#if this.status}}Concluída{{else}}Pendente{{/if}}</td>
+      <td>
+        <a href="/edit/{{this.id}}">Editar</a>
+        <a href="/delete/{{this.id}}" onclick="return confirm('Tem certeza?')">Excluir</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
