@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Categorias</title>
+</head>
+<body>
+  <h1>Lista de Categorias</h1>
+  <a href="/categories/create">Criar Categoria</a>
+  <ul>
+    {{#each categories}}
+      <li>
+        {{nome}} - {{descricao}}
+        <a href="/categories/edit/{{id}}">Editar</a>
+        <a href="/categories/delete/{{id}}" onclick="return confirm('Tem certeza?')">Excluir</a>
+      </li>
+    {{/each}}
+  </ul>
+</body>
+</html>
